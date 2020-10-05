@@ -1,0 +1,125 @@
+{% capture widgetId %}calls-to-action-{{ widget.id }}{% endcapture %}
+
+{% capture gradientAnimationClass %}{% if widget.gradient_animation.value_or_default == 'true' %}is-animated gradient-{{widget.gradient_direction.value_or_default }}{% endif %}{% endcapture %}
+
+{% capture widgetSlug1 %}{{ widget.widget_slug_1.value_or_default | downcase | replace: ' ', '-' }}{% endcapture %}
+{% capture widgetSlug2 %}{{ widget.widget_slug_2.value_or_default | downcase | replace: ' ', '-' }}{% endcapture %}
+{% capture widgetSlug3 %}{{ widget.widget_slug_3.value_or_default | downcase | replace: ' ', '-' }}{% endcapture %}
+{% capture widgetSlug4 %}{{ widget.widget_slug_4.value_or_default | downcase | replace: ' ', '-' }}{% endcapture %}
+
+{% capture widgetSlug1Class %}{% if widgetSlug1 != blank %}widget-slug {{ widgetSlug1 }}{% endif %}{% endcapture %}
+{% capture widgetSlug2Class %}{% if widgetSlug2 != blank %}widget-slug {{ widgetSlug2 }}{% endif %}{% endcapture %}
+{% capture widgetSlug3Class %}{% if widgetSlug3 != blank %}widget-slug {{ widgetSlug3 }}{% endif %}{% endcapture %}
+{% capture widgetSlug4Class %}{% if widgetSlug4 != blank %}widget-slug {{ widgetSlug4 }}{% endif %}{% endcapture %}
+
+<nav class="action-calls custom-action-calls widget {{widgetId}}" aria-label="{% if widget.cta_heading.value_or_default != blank %}{{widget.cta_heading.value_or_default}}{% else %}Calls to action{% endif %} {{widget.id}}" id="{{widgetId}}">
+  <script class="config" type="application/json">
+    {
+      "previewUrl1": "{{ widget.preview_url_1 }}",
+      "previewUrl2": "{{ widget.preview_url_2 }}",
+      "previewUrl3": "{{ widget.preview_url_3 }}",
+      "previewUrl4": "{{ widget.preview_url_4 }}",
+      "widgetId": "{{widgetId}}"
+    }
+  </script>
+
+  <style>
+    {% if widget.cta_heading_color.value != blank %}
+      .{{widgetId}} .cta-heading {
+        color: {{widget.cta_heading_color.value}} !important;
+      }
+    {% endif %}
+    {% if widget.cta_heading_size.value != blank %}
+      .{{widgetId}} .cta-heading {
+        font-size: {{widget.cta_heading_size.value}} !important;
+      }
+    {% endif %}
+
+    {% if widget.text_color.value != blank %}
+      .{{widgetId}} li a {
+        color: {{widget.text_color.value}} !important;
+      }
+    {% endif %}
+    {% if widget.text_hover_color.value != blank %}
+      .{{widgetId}} li a:hover {
+        color: {{widget.text_hover_color.value}} !important;
+      }
+    {% endif %}
+    {% if widget.text_size.value != blank %}
+      .{{widgetId}} li a {
+        font-size: {{widget.text_size.value}} !important;
+        line-height: inherit;
+      }
+    {% endif %}
+    {% if widget.background_color.value != blank %}
+      .{{widgetId}} li a {
+        background-color: {{widget.background_color.value}} !important;
+      }
+      .{{widgetId}} li a:hover {
+        background-color: {{widget.background_color.value | darken: '10%'}} !important;
+      }
+    {% endif %}
+    {% if widget.border_color.value != blank %}
+      .{{widgetId}} li a {
+        border-color: {{widget.border_color.value}} !important;
+      }
+    {% endif %}
+    {% if widget.border_width.value != blank %}
+      .{{widgetId}} li a {
+        border-width: {{widget.border_width.value}} !important;
+      }
+    {% endif %}
+    {% if widget.border_radius.value != blank %}
+      .{{widgetId}} li,
+      .{{widgetId}} li a {
+        border-radius: {{widget.border_radius.value}} !important;
+      }
+    {% endif %}
+
+    {% if widget.gradient_application.value_or_default != "none" %}
+      .{{widgetId}} li a,
+      .{{widgetId}} li a:hover {
+        background-image: linear-gradient({{widget.gradient_direction.value_or_default}}, {{widget.gradient_colors.value}}{% if widget.gradient_animation.value_or_default == 'true' %}, {{widget.gradient_colors.value}}{% endif %});
+        {% if widget.gradient_animation.value_or_default == 'true' %}
+          animation-duration: {{widget.gradient_animation_duration.value_or_default}}s;
+        {% endif %}
+      }
+
+    {% endif %}
+
+    {% comment %}
+      IMPORTANT
+      When adding new css to a link, follow the current convention of #{{widgetId}} li a { ... }
+    {% endcomment %}
+  </style>
+
+  {% if widget.cta_heading.value_or_default != blank %}
+    <h2 class="cta-heading cta-heading-{{{{widget.cta_heading_position.value_or_default}}" style="text-align: {{widget.cta_heading_position.value_or_default}}">{{ widget.cta_heading.value_or_default }}</h2>
+  {% endif %}
+
+  <ul>
+    {% if widget.cta_text_1.value != blank %}
+      <li class="cta-item cta-item-1">
+        <a href="{{ widget.production_url_1 }}" class="{{ gradientAnimationClass }} {{ widgetSlug1Class }}">{{ widget.cta_text_1.value }}</a>
+      </li>
+    {% endif %}
+
+    {% if widget.cta_text_2.value != blank %}
+      <li class="cta-item cta-item-2">
+        <a href="{{ widget.production_url_2}}" class="{{ gradientAnimationClass }} {{ widgetSlug2Class }}">{{ widget.cta_text_2.value }}</a>
+      </li>
+    {% endif %}
+
+    {% if widget.cta_text_3.value != blank %}
+      <li class="cta-item cta-item-3">
+        <a href="{{ widget.production_url_3 }}" class="{{ gradientAnimationClass }} {{ widgetSlug3Class }}">{{ widget.cta_text_3.value }}</a>
+      </li>
+    {% endif %}
+
+    {% if widget.cta_text_4.value != blank %}
+      <li class="cta-item cta-item-3">
+        <a href="{{ widget.production_url_4 }}" class="{{ gradientAnimationClass }} {{ widgetSlug4Class }}">{{ widget.cta_text_4.value }}</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

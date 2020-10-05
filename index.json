@@ -1,0 +1,148 @@
+{
+  "name": "Calls To Action",
+  "widget_id": 5,
+  "widget_type": null,
+  "summary": "List of customizable CTAs",
+  "liquid": true,
+  "widget_popover": "<a href='https://g5search.zendesk.com/hc/en-us/articles/219468937-Calls-to-Action-Widget-' target='_blank'>CTA Documentation</a>",
+  "lib_javascripts": [],
+  "lib_edit_javascripts": [],
+  "lib_edit_stylesheets": [],
+  "verticals": [
+    "senior-living",
+    "self-storage",
+    "apartments",
+    "veterinarian"
+  ],
+  "page_widget": true,
+  "settings": [
+    {
+      "name": "cta_heading",
+      "default_value": ""
+    },
+    {
+      "name": "cta_heading_position",
+      "default_value": "left"
+    },
+    {
+      "name": "cta_heading_size",
+      "default_value": ""
+    },
+    {
+      "name": "cta_heading_color",
+      "default_value": ""
+    },
+    {
+      "name": "cta_text_1",
+      "default_value": ""
+    },
+    {
+      "name": "page_slug_1",
+      "default_value": ""
+    },
+    {
+      "name": "widget_slug_1",
+      "default_value": ""
+    },
+    {
+      "name": "cta_text_2",
+      "default_value": ""
+    },
+    {
+      "name": "page_slug_2",
+      "default_value": ""
+    },
+    {
+      "name": "widget_slug_2",
+      "default_value": ""
+    },
+    {
+      "name": "cta_text_3",
+      "default_value": ""
+    },
+    {
+      "name": "page_slug_3",
+      "default_value": ""
+    },
+    {
+      "name": "widget_slug_3",
+      "default_value": ""
+    },
+    {
+      "name": "cta_text_4",
+      "default_value": ""
+    },
+    {
+      "name": "page_slug_4",
+      "default_value": ""
+    },
+    {
+      "name": "widget_slug_4",
+      "default_value": ""
+    },
+    {
+      "name": "cta_link_1",
+      "default_value": ""
+    },
+    {
+      "name": "cta_link_2",
+      "default_value": ""
+    },
+    {
+      "name": "cta_link_3",
+      "default_value": ""
+    },
+    {
+      "name": "cta_link_4",
+      "default_value": ""
+    },
+    {
+      "name": "background_color",
+      "default_value": ""
+    },
+    {
+      "name": "border_color",
+      "default_value": ""
+    },
+    {
+      "name": "text_color",
+      "default_value": ""
+    },
+    {
+      "name": "text_hover_color",
+      "default_value": ""
+    },
+    {
+      "name": "border_width",
+      "default_value": ""
+    },
+    {
+      "name": "border_radius",
+      "default_value": ""
+    },
+    {
+      "name": "text_size",
+      "default_value": ""
+    },
+    {
+      "name": "gradient_application",
+      "default_value": "none"
+    },
+    {
+      "name": "gradient_direction",
+      "default_value": "180deg"
+    },
+    {
+      "name": "gradient_colors",
+      "default_value": ""
+    },
+    {
+      "name": "gradient_animation",
+      "default_value": "false"
+    },
+    {
+      "name": "gradient_animation_duration",
+      "default_value": "7"
+    }
+  ]
+}

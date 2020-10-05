@@ -1,0 +1,61 @@
+.action-calls {
+  display: flex;
+  flex-direction: column;
+
+  .cta-heading {
+    &-left {
+      align-self: flex-start;
+    }
+
+    &-center {
+      align-self: center;
+    }
+
+    &-right {
+      align-self: flex-end;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cta-item {
+    width: 100%;
+
+    .is-animated {
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease;
+    }
+    .gradient-180deg {
+      animation-name: vertical-gradient;
+      background-size: 100% 225%;
+    }
+    .gradient-90deg {
+      animation-name: horizontal-gradient;
+      background-size: 225% 100%;
+    }
+    .gradient-135deg {
+      animation-name: diagonal-gradient;
+      background-size: 225% 225%;
+    }
+  }
+}
+
+@keyframes vertical-gradient {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+@keyframes horizontal-gradient {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+
+@keyframes diagonal-gradient {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}

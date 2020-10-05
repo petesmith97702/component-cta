@@ -1,0 +1,119 @@
+<form>
+  {{ widget | start_tab: "fa fa-cogs", "Configs", true }}
+    <div class="form-field">
+      {{ widget.cta_heading | edit_text_field: "CTA Heading", "", "best_value" }}
+
+      {% assign position_opts = '{"left": "Left", "center": "Center", "right": "Right"}' %}
+      {{ widget.cta_heading_position | edit_radio_field: "Heading Position", position_opts, "value_or_default" }}
+
+    </div>
+
+    <fieldset>
+       <legend>CTA 1</legend>
+       <!-- Text for CTA 1 -->
+       {{ widget.cta_text_1 | edit_text_field: "Text for CTA 1" }}
+
+       <p>Choose A Link Below</p>
+
+       <!-- Page for CTA 1 -->
+       {{ widget.page_slug_1 | edit_page_field: "Page Link for CTA 1", "value", "", "-- Select a Page --", true  }}
+
+       <p>--OR--</p>
+
+       <!-- Widget for CTA 1 -->
+       {{ widget.widget_slug_1 | edit_text_field: "Widget Link for CTA 1 (Enter Featured Content Pop Out Widget Name)", "Ex: Featured Content Pop Out", "value", "", false, 80 }}
+
+     </fieldset>
+
+     <fieldset>
+       <legend>CTA 2</legend>
+       <!-- Text for CTA 2 -->
+       {{ widget.cta_text_2 | edit_text_field: "Text for CTA 2" }}
+
+       <p>Choose A Link Below</p>
+
+       <!-- Page for CTA 2 -->
+       {{ widget.page_slug_2 | edit_page_field: "Page Link for CTA 2", "value", "", "-- Select a Page --", true  }}
+
+       <p>--OR--</p>
+
+       <!-- Widget for CTA 2 -->
+       {{ widget.widget_slug_2 | edit_text_field: "Widget Link for CTA 2 (Enter Featured Content Pop Out Widget Name)", "Ex: Featured Content Pop Out", "value", "", false, 80 }}
+
+     </fieldset>
+
+     <fieldset>
+       <legend>CTA 3</legend>
+       <!-- Text for CTA 3 -->
+       {{ widget.cta_text_3 | edit_text_field: "Text for CTA 3" }}
+
+       <p>Choose A Link Below</p>
+
+       <!-- Page for CTA 3 -->
+       {{ widget.page_slug_3 | edit_page_field: "Page Link for CTA 3", "value", "", "-- Select a Page --", true  }}
+
+       <p>--OR--</p>
+
+       <!-- Widget for CTA 3 -->
+       {{ widget.widget_slug_3 | edit_text_field: "Widget Link for CTA 3 (Enter Featured Content Pop Out Widget Name)", "Ex: Featured Content Pop Out", "value", "", false, 80 }}
+
+     </fieldset>
+
+     <fieldset>
+       <legend>CTA 4</legend>
+       <!-- Text for CTA 4 -->
+       {{ widget.cta_text_4 | edit_text_field: "Text for CTA 4" }}
+
+       <p>Choose A Link Below</p>
+
+       <!-- Page for CTA 4 -->
+       {{ widget.page_slug_4 | edit_page_field: "Page Link for CTA 4", "value", "", "-- Select a Page --", true  }}
+
+       <p>--OR--</p>
+
+       <!-- Widget for CTA 4 -->
+       {{ widget.widget_slug_4 | edit_text_field: "Widget Link for CTA 4 (Enter Featured Content Pop Out Widget Name)", "Ex: Featured Content Pop Out", "value", "", false, 80 }}
+
+     </fieldset>
+  {{ widget | end_tab }}
+
+  {{ widget | start_tab: "fa fa-tint", "Styles" }}
+    <fieldset>
+       <legend>Text, Background, Borders</legend>
+        <!-- Text -->
+        {{ widget.cta_heading_color | edit_color_field: "Heading Color" }}
+        {{ widget.cta_heading_size | edit_text_field: "Heading Size" }}
+
+        {{ widget.text_color | edit_color_field: "Text Color" }}
+        {{ widget.text_hover_color | edit_color_field: "Text Hover Color" }}
+        {{ widget.text_size | edit_text_field: "Text Size" }}
+
+        <!-- Background Color -->
+        {{ widget.background_color | edit_color_field: "Background Color" }}
+
+        <!-- Border Color -->
+        {{ widget.border_color | edit_color_field: "Border Color (when applicable)" }}
+
+        {{ widget.border_width | edit_text_field: "Border Width (when applicable)" }}
+
+        {{ widget.border_radius | edit_text_field: "Border Radius (when applicable)" }}
+      </fieldset>
+
+    <fieldset>
+      <legend>Gradient Options</legend>
+      <!-- Gradiant Options -->
+        {% assign gradient_opts = '{"none":"None", "background": "Background"}' %}
+        {{ widget.gradient_application | edit_radio_field: "Gradient", gradient_opts, "value_or_default" }}
+
+        {% assign direction_opts = '{"180deg":"Vertical", "90deg": "Horizontal", "135deg": "Diagonal"}' %}
+        {{ widget.gradient_direction | edit_radio_field: "Gradient Direction", direction_opts, "value_or_default" }}
+
+        {{ widget.gradient_colors | edit_text_field: "Gradient Colors, separated by commas (2-4)", "red, green, blue" }}
+
+        {{ widget.gradient_animation | edit_toggle_field: "Animate Gradient", "value_or_default" }}
+
+        {{ widget.gradient_animation_duration | edit_number_field: "Animation Duration, in seconds", "7", "value_or_default", "", 1, 30 }}
+      </fieldset>
+  {{ widget | end_tab: true }}
+
+</form>
